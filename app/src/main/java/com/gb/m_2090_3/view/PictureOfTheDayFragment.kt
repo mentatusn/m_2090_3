@@ -1,5 +1,7 @@
 package com.gb.m_2090_3.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -47,6 +49,12 @@ class PictureOfTheDayFragment : Fragment() {
         binding.chipYesterday.isEnabled = false
         binding.chipYesterday.setOnClickListener {
             Toast.makeText(requireContext(),"chipYesterday",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.inputLayout.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.input.text.toString()}")
+            })
         }
     }
 
