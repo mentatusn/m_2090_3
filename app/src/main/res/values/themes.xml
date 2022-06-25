@@ -3,7 +3,26 @@
     <style name="Base.Theme.M_2090_3" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorPrimary">#FF0101</item>
+        <item name="colorOnSurface">#FF0101</item>
+
+        <item name="colorOnSecondaryContainer">#FF0101</item>
+        <item name="colorPrimaryContainer">#FF0101</item>
+        <item name="colorSurface">#FF0101</item>
+        <item name="chipStyle">@style/MyChipStyle</item>
+     <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
     </style>
 
+    <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipBackgroundColor">@drawable/my_selector_backgroundchip</item>
+        <item name="rippleColor">#CF00F4</item>
+    </style>
+
+
     <style name="Theme.M_2090_3" parent="Base.Theme.M_2090_3" />
+
+
 </resources>
