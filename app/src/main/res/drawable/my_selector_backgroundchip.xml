@@ -8,5 +8,5 @@
     <item android:color="#00FF0A" android:state_pressed="true"/>
 
     <!-- Not selected -->
-    <item android:color="#4CAF9F" />
+    <item android:color="#003FF8" />
 </selector>
