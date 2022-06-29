@@ -15,8 +15,8 @@
         <item name="chipStyle">@style/MyChipStyle</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
 
-        <item name="textAppearanceBody2">@style/MyTextAppearanceBody2</item>
-        <item name="textAppearanceLabelLarge">@style/MyTextAppearanceBody2</item>
+        <!--<item name="textAppearanceBody2">@style/MyTextAppearanceBody2</item>
+        <item name="textAppearanceLabelLarge">@style/MyTextAppearanceBody2</item>-->
 
         <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
            <item name="android:statusBarColor">@android:color/transparent</item>
@@ -53,6 +53,7 @@
     <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
         <item name="chipBackgroundColor">@drawable/my_selector_backgroundchip</item>
         <item name="rippleColor">#CF00F4</item>
+        <item name="android:textAppearance">@style/MyTextAppearanceBody2</item>
     </style>
 
     <style name="MyTextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
