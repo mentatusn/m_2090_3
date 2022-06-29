@@ -11,6 +11,11 @@
     <string name="today">today</string>
     <string name="yesterday">yesterday</string>
     <string name="wiki_helper_text">wiki_helper_text</string>
+    <string name="favourite">Favourite</string>
+    <string name="settings">Settings</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
 
 
 </resources>

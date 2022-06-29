@@ -4,17 +4,23 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="myColor">#FF0101</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="myColor">@color/my_color</item>
+        <item name="myColor2">@color/my_color_test</item>
 
         <item name="colorPrimary">?attr/myColor</item>
-        <item name="colorOnSurface">?myColor</item>
+
         <item name="colorOnSecondaryContainer">?myColor</item>
         <item name="colorPrimaryContainer">?myColor</item>
-        <item name="colorSurface">?myColor</item>
+
         <item name="colorOnSurfaceVariant">?myColor</item>
         <item name="chipStyle">@style/MyChipStyle</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
         <item name="shapeAppearanceSmallComponent">@style/MyShapeAppearanceSmallComponent</item>
+        <item name="bottomAppBarStyle">@style/MyAppBarStyle</item>
+        <item name="tabStyle">@style/MyTabLayoutStyle</item>
 
         <!--<item name="textAppearanceBody2">@style/MyTextAppearanceBody2</item>
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceBody2</item>-->
@@ -22,6 +28,16 @@
         <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
            <item name="android:statusBarColor">@android:color/transparent</item>
            <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
+    </style>
+
+    <style name="MyTabLayoutStyle" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabIndicatorColor">?myColor2</item>
+    </style>
+
+    <style name="MyAppBarStyle" parent="Widget.Material3.BottomAppBar">
+        <item name="backgroundTint">?myColor2</item>
+        <item name="navigationIconTint">@color/white</item>
     </style>
 
     <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
@@ -35,7 +51,7 @@
         <item name="android:fontFamily">@font/aladin</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">54sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.1178571429</item>
     </style>
 

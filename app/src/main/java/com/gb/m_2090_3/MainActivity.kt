@@ -1,17 +1,11 @@
 package com.gb.m_2090_3
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.gb.m_2090_3.databinding.ActivityMainBinding
-import com.gb.m_2090_3.view.PictureOfTheDayFragment
+import com.gb.m_2090_3.view.picture.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
 
         if(savedInstanceState==null){
-            supportFragmentManager.beginTransaction().replace(R.id.container,PictureOfTheDayFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.container,
+                PictureOfTheDayFragment.newInstance()).commit()
         }
 
     }
