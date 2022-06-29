@@ -25,7 +25,8 @@
     </style>
 
     <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
-        <item name="cornerFamily">cut</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 
@@ -60,6 +61,8 @@
         <item name="chipBackgroundColor">@drawable/my_selector_backgroundchip</item>
         <item name="rippleColor">#CF00F4</item>
         <item name="android:textAppearance">@style/MyTextAppearanceBody2</item>
+        <item name="shapeAppearance">@style/MyShapeAppearanceSmallComponent</item>
+<!--        <item name="shapeAppearanceOverlay">@style/MyTextAppearanceBody2</item>-->
     </style>
 
     <style name="MyTextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
