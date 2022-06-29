@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="myColor" format="color"/>
+    <attr name="myColor2" format="color"/>
+    <attr name="myColor1" format="color"/>
+    <attr name="myColor3" format="color"/>
+    <attr name="myRefAttr" format="reference"/>
+</resources>

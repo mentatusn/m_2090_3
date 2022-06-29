@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
+        //setTheme(R.style.MyRedTheme)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         if(savedInstanceState==null){
             supportFragmentManager.beginTransaction().replace(R.id.container,PictureOfTheDayFragment.newInstance()).commit()

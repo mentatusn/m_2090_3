@@ -10,25 +10,27 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputLayout"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipToday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="today" />
+            android:text="@string/today" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipToday2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="today" />
+            android:text="@string/yesterday" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipYesterday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="yesterday" />
+            android:text="@string/yesterday" />
     </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,12 +38,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint"
-        android:padding="10dp"
+        android:padding="@dimen/fragment_padding_il"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:endIconDrawable="@drawable/ic_wikipedia"
         app:endIconMode="custom"
-        app:helperText="wiki_helper_text"
+        app:helperText="@string/wiki_helper_text"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,6 +56,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_padding_iv"
         android:layout_gravity="center"
         android:contentDescription="@string/photo_of_the_day_stub"
         app:layout_constraintTop_toBottomOf="@+id/inputLayout" />
@@ -65,6 +68,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
+        android:padding="@dimen/fragment_padding_fab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />

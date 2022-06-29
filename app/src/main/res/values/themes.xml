@@ -4,18 +4,37 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="colorPrimary">#FF0101</item>
-        <item name="colorOnSurface">#FF0101</item>
+        <item name="myColor">#FF0101</item>
 
-        <item name="colorOnSecondaryContainer">#FF0101</item>
-        <item name="colorPrimaryContainer">#FF0101</item>
-        <item name="colorSurface">#FF0101</item>
-        <item name="colorOnSurfaceVariant">#FF0101</item>
+        <item name="colorPrimary">?attr/myColor</item>
+        <item name="colorOnSurface">?myColor</item>
+        <item name="colorOnSecondaryContainer">?myColor</item>
+        <item name="colorPrimaryContainer">?myColor</item>
+        <item name="colorSurface">?myColor</item>
+        <item name="colorOnSurfaceVariant">?myColor</item>
         <item name="chipStyle">@style/MyChipStyle</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
-     <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
+        <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
+           <item name="android:statusBarColor">@android:color/transparent</item>
+           <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
+    </style>
+
+    <style name="MyNewTheme" parent="Base.Theme.M_2090_3" />
+
+    <style name="MyNewTheme.MyNewNewTheme" />
+
+    <style name="MyNewNewNewTheme" parent="MyNewTheme.MyNewNewTheme" />
+
+    <style name="MyRedTheme" parent="MyNewNewNewTheme">
+        <item name="myColor">#FF0101</item>
+    </style>
+
+    <style name="MyGreenTheme" parent="MyNewNewNewTheme">
+        <item name="myColor">#1EF41E</item>
+    </style>
+
+    <style name="MyBlueTheme" parent="MyNewNewNewTheme">
+        <item name="myColor">#0D96FF</item>
     </style>
 
     <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
@@ -27,9 +46,6 @@
         <item name="helperTextTextColor">#CF00F4</item>
         <item name="counterTextColor">@drawable/my_selector_backgroundchip</item>
     </style>
-
-
-    <style name="Theme.M_2090_3" parent="Base.Theme.M_2090_3" />
 
 
 </resources>
