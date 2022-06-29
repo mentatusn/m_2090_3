@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.M_2090_3" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.M_2090_3" parent="Theme.Material3.DynamicColors.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
@@ -14,9 +14,22 @@
         <item name="colorOnSurfaceVariant">?myColor</item>
         <item name="chipStyle">@style/MyChipStyle</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
+
+        <item name="textAppearanceBody2">@style/MyTextAppearanceBody2</item>
+        <item name="textAppearanceLabelLarge">@style/MyTextAppearanceBody2</item>
+
         <!--   <item name="android:navigationBarColor">@android:color/transparent</item>
            <item name="android:statusBarColor">@android:color/transparent</item>
            <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
+    </style>
+
+    <style name="MyTextAppearanceBody2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/aladin</item>
+        <item name="android:fontFamily">@font/aladin</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">54sp</item>
+        <item name="android:letterSpacing">0.1178571429</item>
     </style>
 
     <style name="MyNewTheme" parent="Base.Theme.M_2090_3" />
