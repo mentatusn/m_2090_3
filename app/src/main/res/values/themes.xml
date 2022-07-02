@@ -10,17 +10,17 @@
         <item name="myColor">@color/my_color</item>
         <item name="myColor2">@color/my_color_test</item>
 
-        <item name="colorPrimary">?attr/myColor</item>
+  <!--      <item name="colorPrimary">?attr/myColor</item>
 
         <item name="colorOnSecondaryContainer">?myColor</item>
         <item name="colorPrimaryContainer">?myColor</item>
 
-        <item name="colorOnSurfaceVariant">?myColor</item>
-        <item name="chipStyle">@style/MyChipStyle</item>
+        <item name="colorOnSurfaceVariant">?myColor</item>-->
+  <!--      <item name="chipStyle">@style/MyChipStyle</item>
         <item name="textInputStyle">@style/MyTextInputLayoutStyle</item>
         <item name="shapeAppearanceSmallComponent">@style/MyShapeAppearanceSmallComponent</item>
         <item name="bottomAppBarStyle">@style/MyAppBarStyle</item>
-        <item name="tabStyle">@style/MyTabLayoutStyle</item>
+        <item name="tabStyle">@style/MyTabLayoutStyle</item>-->
 
         <!--<item name="textAppearanceBody2">@style/MyTextAppearanceBody2</item>
         <item name="textAppearanceLabelLarge">@style/MyTextAppearanceBody2</item>-->
