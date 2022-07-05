@@ -20,6 +20,9 @@
     <string name="earth" translatable="false">Earth</string>
     <string name="mars" translatable="false">Mars</string>
     <string name="system" translatable="false">System</string>
+    <string name="constraint">constraint</string>
+    <string name="coordinator">coordinator</string>
+    <string name="motion">motion</string>
 
 
 </resources>
