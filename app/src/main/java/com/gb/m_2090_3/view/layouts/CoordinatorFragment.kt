@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.gb.m_2090_3.databinding.FragmentConstraintBinding
 import com.gb.m_2090_3.databinding.FragmentCoordinatorBinding
 
 class CoordinatorFragment : Fragment() {

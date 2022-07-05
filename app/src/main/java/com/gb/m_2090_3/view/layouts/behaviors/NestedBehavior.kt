@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.widget.NestedScrollView
-import com.gb.m_2090_3.R
 import com.google.android.material.appbar.AppBarLayout
 
 class NestedBehavior(context: Context, attrs: AttributeSet? = null) :

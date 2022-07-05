@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.gb.m_2090_3.R
 import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs
 

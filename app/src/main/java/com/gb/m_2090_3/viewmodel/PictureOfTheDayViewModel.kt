@@ -1,6 +1,5 @@
 package com.gb.m_2090_3.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gb.m_2090_3.BuildConfig

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.gb.m_2090_3.R
 import com.gb.m_2090_3.databinding.FragmentEarthBinding
-import com.gb.m_2090_3.databinding.FragmentPictureBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
