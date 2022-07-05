@@ -6,12 +6,19 @@
     android:layout_height="match_parent">
 
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn1,btn2"/>
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
         app:constraint_referenced_ids="btn1,btn2"/>
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="wrap_content"
@@ -21,10 +28,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn1"
-        android:layout_width="136dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintHorizontal_bias="0.2"
+        android:visibility="gone"
         android:text="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +42,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn2"
-        android:layout_width="136dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintBottom_toBottomOf="parent"

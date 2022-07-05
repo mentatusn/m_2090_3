@@ -22,8 +22,15 @@ class ConstraintFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+    var flag = true
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btn3.setOnClickListener {
+            flag = !flag
+            binding.group1.visibility = if (flag) View.VISIBLE else View.INVISIBLE
+
+        }
     }
     companion object {
         @JvmStatic
