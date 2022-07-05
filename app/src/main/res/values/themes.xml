@@ -9,7 +9,7 @@
         <item name="myColor">@color/my_color</item>
         <item name="myColor2">@color/my_color_test</item>
 
-        <item name="bottomNavigationStyle">@style/MyBottomNavigationView</item>
+        <item name="appBarLayoutStyle">@style/MyBottomNavigationView</item>
 
         <item name="shapeAppearanceMediumComponent">@style/MyShapeAppearanceMediumComponent</item>
     </style>
