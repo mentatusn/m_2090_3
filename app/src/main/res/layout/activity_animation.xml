@@ -2,94 +2,56 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/bg_earth" />
-
     <FrameLayout
-        android:id="@+id/transparentBackground"
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        android:alpha="0"
+        android:layout_height="52dp"
         android:background="@android:color/white"
-        android:clickable="false" />
+        android:stateListAnimator="@animator/toolbar_elevation">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/option_one_container"
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:alpha="0"
-            android:orientation="horizontal"
-            android:paddingEnd="32dp"
-            android:paddingBottom="32dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="5dp"
-                android:text="Option 1"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_archive" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/option_two_container"
-            android:layout_width="wrap_content"
-            android:alpha="0"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:orientation="horizontal"
-            android:paddingEnd="32dp"
-            android:paddingBottom="32dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="5dp"
-                android:text="Option 2"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                app:srcCompat="@drawable/ic_send" />
-        </LinearLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="36dp"
-            android:elevation="5dp" />
-
-        <ImageView
-            android:id="@+id/plusImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="42dp"
-            android:layout_marginBottom="52dp"
-            android:elevation="10dp"
-            app:srcCompat="@drawable/ic_plus_fab" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="StateListAnimator Example"
+            android:textColor="?colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="52dp"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bg_earth" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bg_mars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bg_system" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 </FrameLayout>
