@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.RecyclerView
@@ -30,20 +32,24 @@ class AnimationActivity : AppCompatActivity() {
         binding = ActivityAnimationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val titles: MutableList<String> = ArrayList()
+        for (i in 0..4) {
+            titles.add("Item $i")
+        }
+
+
+
         binding.button.setOnClickListener {
             isFlag = !isFlag
-            val params = it.layoutParams as FrameLayout.LayoutParams
-
-            val changeBounds = ChangeBounds()
-            changeBounds.duration = 2000L
-            changeBounds.setPathMotion(ArcMotion())
-            TransitionManager.beginDelayedTransition(binding.root,changeBounds)
-            if (isFlag) {
-                params.gravity = Gravity.TOP or Gravity.START
-            } else {
-                params.gravity = Gravity.BOTTOM or Gravity.END
+            TransitionManager.beginDelayedTransition(binding.root)
+            binding.transitionsContainer.removeAllViews()
+            titles.shuffle()
+            titles.forEach {
+                binding.transitionsContainer.addView(TextView(this).apply {
+                    text = it
+                    ViewCompat.setTransitionName(this,it) // ЗАДАЛИ "псевдоним"
+                })
             }
-            binding.button.layoutParams = params
         }
     }
 
