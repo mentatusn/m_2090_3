@@ -1,14 +1,12 @@
 package com.gb.m_2090_3.view.animation
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.transition.ChangeBounds
-import androidx.transition.Fade
-import androidx.transition.TransitionManager
-import androidx.transition.TransitionSet
+import androidx.transition.*
 import com.gb.m_2090_3.databinding.ActivityAnimationBinding
 
 class AnimationActivity : AppCompatActivity() {
@@ -28,11 +26,14 @@ class AnimationActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             isFlag = !isFlag
             val myAutoTransition = TransitionSet()
-            myAutoTransition.ordering = TransitionSet.ORDERING_TOGETHER
-            val fade = Fade()
+            //myAutoTransition.ordering = TransitionSet.ORDERING_TOGETHER
+            myAutoTransition.ordering = TransitionSet.ORDERING_SEQUENTIAL
+            val fade = Slide(Gravity.END)
+            fade.duration = 1000L
             val changeBounds = ChangeBounds()
-            myAutoTransition.addTransition(fade)
+            changeBounds.duration  = 2000L
             myAutoTransition.addTransition(changeBounds)
+            myAutoTransition.addTransition(fade)
             TransitionManager.beginDelayedTransition(binding.transitionsContainer,myAutoTransition)
             binding.text.visibility = if(isFlag) View.VISIBLE else {View.GONE}
         }
