@@ -28,6 +28,12 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/MyNewTheme">
+        </activity>
+
+
+        <activity
+            android:name=".view.animation.AnimationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
