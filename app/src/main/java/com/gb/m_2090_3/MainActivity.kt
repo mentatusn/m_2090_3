@@ -2,7 +2,6 @@ package com.gb.m_2090_3
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.navigation.ui.AppBarConfiguration
 import com.gb.m_2090_3.databinding.ActivityMainBinding
 import com.gb.m_2090_3.view.picture.PictureOfTheDayFragment
