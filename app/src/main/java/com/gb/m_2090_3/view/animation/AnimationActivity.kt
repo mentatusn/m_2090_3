@@ -21,11 +21,9 @@ class AnimationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAnimationStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val constraintSetStart = ConstraintSet()
-        val constraintSetEnd = ConstraintSet()
+        val constraintSet = ConstraintSet()
         //constraintSetStart.clone(binding.constraintContainer)
-        constraintSetStart.clone(this,R.layout.activity_animation_start)
-        constraintSetEnd.clone(this,R.layout.activity_animation_end)
+        constraintSet.clone(this,R.layout.activity_animation_start)
 
         binding.tap.setOnClickListener {
             isFlag = !isFlag
@@ -35,10 +33,12 @@ class AnimationActivity : AppCompatActivity() {
             changeBounds.interpolator = AnticipateOvershootInterpolator(5.0f)
             TransitionManager.beginDelayedTransition(binding.constraintContainer,changeBounds)
             if(isFlag){
-                constraintSetEnd.applyTo(binding.constraintContainer)
+                constraintSet.connect(R.id.title,ConstraintSet.RIGHT,R.id.backgroundImage,ConstraintSet.RIGHT)
+                //constraintSet.clear(R.id.title,ConstraintSet.RIGHT)
             }else{
-                constraintSetStart.applyTo(binding.constraintContainer)
+                constraintSet.connect(R.id.title,ConstraintSet.RIGHT,R.id.backgroundImage,ConstraintSet.LEFT)
             }
+            constraintSet.applyTo(binding.constraintContainer)
         }
     }
 
