@@ -8,6 +8,7 @@ import com.gb.m_2090_3.databinding.ActivityRecyclerItemEarthBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemHeaderBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemMarsBinding
 import com.gb.m_2090_3.databinding.BottomNavigationLayoutBinding
+import kotlinx.coroutines.NonDisposableHandle.parent
 
 class RecyclerAdapter(private val listData: List<Data>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -38,7 +39,17 @@ class RecyclerAdapter(private val listData: List<Data>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        //TODO("Not yet implemented")
+        when (getItemViewType(position)){
+            TYPE_EARTH -> {
+                (holder as EarthViewHolder).bind(listData[position])
+            }
+            TYPE_MARS -> {
+                (holder as MarsViewHolder).bind(listData[position])
+            }
+            else -> {
+                (holder as HeaderViewHolder).bind(listData[position])
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -47,16 +58,22 @@ class RecyclerAdapter(private val listData: List<Data>) :
 
     class HeaderViewHolder(val binding: ActivityRecyclerItemHeaderBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
+        fun bind(data:Data){
+            binding.name.text = data.name
+        }
     }
 
     class EarthViewHolder(val binding: ActivityRecyclerItemEarthBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
+        fun bind(data:Data){
+            binding.name.text = data.name
+        }
     }
 
     class MarsViewHolder(val binding: ActivityRecyclerItemMarsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
+        fun bind(data:Data){
+            binding.name.text = data.name
+        }
     }
 }
