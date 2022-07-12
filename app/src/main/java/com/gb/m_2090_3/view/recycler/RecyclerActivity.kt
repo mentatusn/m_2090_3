@@ -13,14 +13,14 @@ class RecyclerActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityRecyclerBinding
     private val data = arrayListOf(
-        Data("Заголовок",type= TYPE_HEADER),
-        Data("Earth",type=TYPE_EARTH),
-        Data("Earth",type=TYPE_EARTH),
-        Data("Mars", type= TYPE_MARS),
-        Data("Earth",type=TYPE_EARTH),
-        Data("Earth",type=TYPE_EARTH),
-        Data("Earth",type=TYPE_EARTH),
-        Data("Mars", type=TYPE_MARS)
+        Pair(Data("Заголовок", type = TYPE_HEADER), false),
+        Pair(Data("Earth", type = TYPE_EARTH), false),
+        Pair(Data("Earth", type = TYPE_EARTH), false),
+        Pair(Data("Mars", type = TYPE_MARS), false),
+        Pair(Data("Earth", type = TYPE_EARTH), false),
+        Pair(Data("Earth", type = TYPE_EARTH), false),
+        Pair(Data("Earth", type = TYPE_EARTH), false),
+        Pair(Data("Mars", type = TYPE_MARS), false)
     )
     lateinit var adapter: RecyclerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,17 +28,25 @@ class RecyclerActivity : AppCompatActivity() {
         binding = ActivityRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter=  RecyclerAdapter(data,callbackAdd,callbackRemove)
-        binding.recyclerView.adapter =adapter
+        adapter = RecyclerAdapter(data, callbackAdd, callbackRemove)
+        binding.recyclerView.adapter = adapter
+
+        val lat = 10
+        val lon = 10
+        val location = lat to lon
+        location.first
+        location.second
+        val location2 = Pair(lat, lon)
 
 
     }
+
     private val callbackAdd = AddItem {
-        data.add(it, Data("Mars(New)", type= TYPE_MARS))
-        adapter.setListDataAdd(data,it)
+        data.add(it, Pair(Data("Mars(New)", type = TYPE_MARS),false))
+        adapter.setListDataAdd(data, it)
     }
     private val callbackRemove = RemoveItem {
         data.removeAt(it)
-        adapter.setListDataRemove(data,it)
+        adapter.setListDataRemove(data, it)
     }
 }
