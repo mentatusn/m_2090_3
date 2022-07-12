@@ -9,16 +9,16 @@ import com.gb.m_2090_3.databinding.ActivityRecyclerItemEarthBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemHeaderBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemMarsBinding
 
-class RecyclerAdapter(private var listData: List<Data>,val callbackAdd: AddItem,val callbackRemove: RemoveItem) :
+class RecyclerAdapter(private var listData: MutableList<Data>,val callbackAdd: AddItem,val callbackRemove: RemoveItem) :
     RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder>() {
 
 
-    fun setListDataRemove(listDataNew: List<Data>,position: Int){
+    fun setListDataRemove(listDataNew: MutableList<Data>,position: Int){
         listData = listDataNew
         notifyItemRemoved(position)
     }
 
-    fun setListDataAdd(listDataNew: List<Data>,position: Int){
+    fun setListDataAdd(listDataNew: MutableList<Data>,position: Int){
         listData = listDataNew
         notifyItemInserted(position)
     }
@@ -68,6 +68,21 @@ class RecyclerAdapter(private var listData: List<Data>,val callbackAdd: AddItem,
             }
             binding.removeItemImageView.setOnClickListener {
                 callbackRemove.remove(layoutPosition)
+            }
+            binding.moveItemUp.setOnClickListener {
+                // TODO HW java.lang.IndexOutOfBoundsException: Index: -1, Size: 7
+                listData.removeAt(layoutPosition).apply {
+                    listData.add(layoutPosition-1,this)
+                }
+                notifyItemMoved(layoutPosition,layoutPosition-1)
+            }
+
+            binding.moveItemDown.setOnClickListener {
+                // TODO HW java.lang.IndexOutOfBoundsException: Index: 8, Size: 7
+                listData.removeAt(layoutPosition).apply {
+                    listData.add(layoutPosition+1,this)
+                }
+                notifyItemMoved(layoutPosition,layoutPosition+1)
             }
 
         }
