@@ -4,13 +4,15 @@ import android.view.LayoutInflater
 import android.view.ScrollCaptureCallback
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.gb.m_2090_3.R
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemEarthBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemHeaderBinding
 import com.gb.m_2090_3.databinding.ActivityRecyclerItemMarsBinding
 
 class RecyclerAdapter(private var listData: MutableList<Pair<Data,Boolean>>,val callbackAdd: AddItem,val callbackRemove: RemoveItem) :
-    RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder>() {
+    RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder>(),ItemTouchHelperAdapter {
 
 
     fun setListDataRemove(listDataNew: MutableList<Pair<Data,Boolean>>,position: Int){
@@ -69,6 +71,7 @@ class RecyclerAdapter(private var listData: MutableList<Pair<Data,Boolean>>,val 
             binding.removeItemImageView.setOnClickListener {
                 callbackRemove.remove(layoutPosition)
             }
+
             binding.moveItemUp.setOnClickListener {
                 // TODO HW java.lang.IndexOutOfBoundsException: Index: -1, Size: 7
                 listData.removeAt(layoutPosition).apply {
@@ -94,6 +97,8 @@ class RecyclerAdapter(private var listData: MutableList<Pair<Data,Boolean>>,val 
             }
 
         }
+
+
     }
 
 
@@ -115,7 +120,25 @@ class RecyclerAdapter(private var listData: MutableList<Pair<Data,Boolean>>,val 
     }
 
     abstract class BaseViewHolder(view: View) :
-        RecyclerView.ViewHolder(view) {
+        RecyclerView.ViewHolder(view),ItemTouchHelperViewHolder {
         abstract fun bind(data: Pair<Data,Boolean>)
+        override fun onItemSelect() {
+            itemView.setBackgroundColor(ContextCompat.getColor(itemView.context,R.color.my_color))
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundColor(0)
+        }
+    }
+
+    override fun onItemMove(fromPosition: Int, toPosition: Int) {
+        listData.removeAt(fromPosition).apply {
+            listData.add(toPosition,this)
+        }
+        notifyItemMoved(fromPosition,toPosition)
+    }
+
+    override fun onItemDismiss(position: Int) {
+        callbackRemove.remove(position)
     }
 }
