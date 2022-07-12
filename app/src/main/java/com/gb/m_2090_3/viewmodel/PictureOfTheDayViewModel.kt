@@ -3,6 +3,7 @@ package com.gb.m_2090_3.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gb.m_2090_3.BuildConfig
+
 import com.gb.m_2090_3.model.PictureOfTheDayResponseData
 import com.gb.m_2090_3.model.RepositoryImpl
 import retrofit2.Call
@@ -32,7 +33,7 @@ class PictureOfTheDayViewModel(private val liveData: MutableLiveData<AppState> =
             if(response.isSuccessful){
                 liveData.postValue(AppState.Success(response.body()!!))
             }else{
-                liveData.postValue(AppState.Error(throw IllegalStateException("что-то пошло не так")))
+                liveData.postValue(AppState.Error( IllegalStateException("что-то пошло не так")))
             }
         }
 

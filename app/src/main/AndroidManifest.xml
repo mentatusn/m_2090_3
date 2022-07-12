@@ -34,6 +34,11 @@
         <activity
             android:name=".view.animation.AnimationActivity"
             android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".view.recycler.RecyclerActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
