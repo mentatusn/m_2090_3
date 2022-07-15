@@ -11,6 +11,7 @@ import android.text.style.BulletSpan
 import android.text.style.DynamicDrawableSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -112,21 +113,30 @@ class PictureOfTheDayFragment : Fragment() {
                 val spannableStringBuilder:SpannableStringBuilder
 
 
-                val text = "My text \nbullet one \nbullet two"
-
+                val text = "My text \nbullet one \nbulleterter two\nbullet wetwwefrtweteone \nbullet wetwettwo\nbullet wetwetwone \nbullet two"
                 spannableString = SpannableString(text)
+                val result = text.indexesOf("\n")
 
-                val bulletSpanOne = BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20)
-                val bulletSpanSecond = BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20)
+                var current = result.first()
+                result.forEach {
+                    if(current!=it){
+                        spannableString.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
+                            current+1,it,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    }
+                    current = it
+                }
+                spannableString.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
+                    current+1,text.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+                Log.d("@@@",result.toString())
 
 
-                spannableString.setSpan(bulletSpanOne,9,20,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                spannableString.setSpan(bulletSpanSecond,21,spannableString.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                 for (i in text.indices){
                     if(text[i]=='t'){
-                        spannableString.setSpan(
-                            ForegroundColorSpan(ContextCompat.getColor(requireContext(),R.color.my_color)),
-                        i,i+1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                            spannableString.setSpan(
+                                ForegroundColorSpan(ContextCompat.getColor(requireContext(),R.color.my_color)),
+                                i,i+1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+
                     }
                 }
 
@@ -155,6 +165,11 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
     }
+
+    fun String.indexesOf(substr: String, ignoreCase: Boolean = true): List<Int> =
+        (if (ignoreCase) Regex(substr, RegexOption.IGNORE_CASE) else Regex(substr))
+            .findAll(this).map { it.range.first }.toList()
+
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
