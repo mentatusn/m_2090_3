@@ -1,6 +1,7 @@
 package com.gb.m_2090_3.view.picture
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -90,6 +91,11 @@ class PictureOfTheDayFragment : Fragment() {
                 binding.imageView.load(appState.pictureOfTheDayResponseData.url) {
                     //TODO HW настроить загрузку изображения: error() placeholder()
                 }
+
+
+                binding.textView.text = appState.pictureOfTheDayResponseData.explanation
+                binding.textView.typeface = Typeface.createFromAsset(requireActivity().assets,"folder1/folder3/az_Eret1.ttf")
+
             }
         }
     }

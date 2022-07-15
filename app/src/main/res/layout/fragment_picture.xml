@@ -58,7 +58,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/fragment_padding_iv"
+        android:visibility="gone"
         android:layout_gravity="center"
+        android:contentDescription="@string/photo_of_the_day_stub"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_padding_iv"
+        android:layout_gravity="center"
+        android:textSize="20sp"
         android:contentDescription="@string/photo_of_the_day_stub"
         app:layout_constraintTop_toBottomOf="@+id/inputLayout" />
 
