@@ -114,18 +114,18 @@ class PictureOfTheDayFragment : Fragment() {
 
 
                 val text = "My text \nbullet one \nbulleterter two\nbullet wetwwefrtweteone \nbullet wetwettwo\nbullet wetwetwone \nbullet two"
-                spannableString = SpannableString(text)
+                spannableStringBuilder = SpannableStringBuilder(text)
                 val result = text.indexesOf("\n")
 
                 var current = result.first()
                 result.forEach {
                     if(current!=it){
-                        spannableString.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
+                        spannableStringBuilder.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
                             current+1,it,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                     }
                     current = it
                 }
-                spannableString.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
+                spannableStringBuilder.setSpan(BulletSpan(20,ContextCompat.getColor(requireContext(),R.color.my_color),20),
                     current+1,text.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
                 Log.d("@@@",result.toString())
@@ -133,16 +133,15 @@ class PictureOfTheDayFragment : Fragment() {
 
                 for (i in text.indices){
                     if(text[i]=='t'){
-                            spannableString.setSpan(
+                        spannableStringBuilder.setSpan(
                                 ForegroundColorSpan(ContextCompat.getColor(requireContext(),R.color.my_color)),
                                 i,i+1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
                     }
                 }
 
                 for (i in text.indices){
                     if(text[i]=='t'){
-                        spannableString.setSpan(
+                        spannableStringBuilder.setSpan(
                             ForegroundColorSpan(ContextCompat.getColor(requireContext(),R.color.my_color)),
                         i,i+1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                     }
@@ -151,14 +150,16 @@ class PictureOfTheDayFragment : Fragment() {
                 val bitmap = ContextCompat.getDrawable(requireContext(), R.drawable.ic_earth)!!.toBitmap()
                 for (i in text.indices){
                     if(text[i]=='o'){
-                        spannableString.setSpan(
+                        spannableStringBuilder.setSpan(
                             ImageSpan(requireContext(),bitmap),
                         i,i+1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                     }
                 }
 
+                spannableStringBuilder.insert(3,"word")
+                //spannableStringBuilder.replace(3,4,"word")
 
-                binding.textView.text = spannableString
+                binding.textView.text = spannableStringBuilder
 
 
 
