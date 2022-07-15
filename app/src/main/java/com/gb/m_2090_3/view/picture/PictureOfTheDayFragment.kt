@@ -4,6 +4,10 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.Spanned
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -95,6 +99,18 @@ class PictureOfTheDayFragment : Fragment() {
 
                 binding.textView.text = appState.pictureOfTheDayResponseData.explanation
                 binding.textView.typeface = Typeface.createFromAsset(requireActivity().assets,"folder1/folder3/az_Eret1.ttf")
+
+                val spanned:Spanned
+                val spannableString:SpannableString
+                val spannableStringBuilder:SpannableStringBuilder
+
+                val text = "My text <ul><li>bullet one</li><li>bullet two</li></ul>"
+
+
+                binding.textView.text = text
+                binding.textView.text = Html.fromHtml(text)
+
+
 
             }
         }
