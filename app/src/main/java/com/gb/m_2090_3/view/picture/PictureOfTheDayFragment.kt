@@ -6,11 +6,10 @@ import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.*
-import android.text.style.BulletSpan
-import android.text.style.DynamicDrawableSpan
-import android.text.style.ForegroundColorSpan
-import android.text.style.ImageSpan
+import android.text.style.*
 import android.util.Log
 import android.view.*
 import android.widget.TextView
@@ -18,6 +17,8 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.provider.FontRequest
+import androidx.core.provider.FontsContractCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -167,6 +168,22 @@ class PictureOfTheDayFragment : Fragment() {
 
 
 
+                val request = FontRequest("com.google.android.gms.fonts","com.google.android.gms","Aladin",
+                R.array.com_google_android_gms_fonts_certs)
+
+                val callback = object :FontsContractCompat.FontRequestCallback(){
+                    override fun onTypefaceRetrieved(typeface: Typeface?) {
+                        typeface?.let{
+                            spannableStringBuilder.setSpan(
+                                TypefaceSpan(it),
+                                0,spannableStringBuilder.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                        }
+
+                        super.onTypefaceRetrieved(typeface)
+                    }
+                }
+
+                FontsContractCompat.requestFont(requireContext(),request,callback, Handler(Looper.getMainLooper()))
 
 
             }
