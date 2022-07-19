@@ -2,9 +2,6 @@
 
     <style name="Base.Theme.M_2090_3" parent="Theme.Material3.DynamicColors.DayNight">
 
-
-
-
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
