@@ -1,5 +1,6 @@
 package com.gb.m_2090_3.view.ux
 
+import android.app.ProgressDialog.show
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.gb.m_2090_3.databinding.FragmentUxButtonBinding
+import smartdevelop.ir.eram.showcaseviewlib.GuideView
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
 
 
 class TutorialButtonUXFragment : Fragment() {
@@ -23,6 +26,8 @@ class TutorialButtonUXFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         Handler(Looper.getMainLooper()).postDelayed({
             if (isAdded)// проверяем, не умер ли фрагент
                 show()
@@ -30,13 +35,13 @@ class TutorialButtonUXFragment : Fragment() {
     }
 
     private fun show() {
-        /*GuideView.Builder(requireContext())
+        GuideView.Builder(requireContext())
             .setTitle("Guide Title Text")
             .setContentText("Guide Description Text\n .....Guide Description Text\n .....Guide Description Text .....")
             .setTargetView(binding.btnBad)
-            .setDismissType(DismissType.outside) //optional - default dismissible by TargetView
+            .setDismissType(DismissType.anywhere) //optional - default dismissible by TargetView
             .build()
-            .show()*/
+            .show()
     }
 
     override fun onCreateView(
