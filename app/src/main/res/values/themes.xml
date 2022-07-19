@@ -62,6 +62,10 @@
 
     <style name="MyNewTheme" parent="Base.Theme.M_2090_3" />
 
+    <style name="SplashTheme" parent="MyNewTheme" >
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
     <style name="MyNewTheme.MyNewNewTheme" />
 
     <style name="MyNewNewNewTheme" parent="MyNewTheme.MyNewNewTheme" />
