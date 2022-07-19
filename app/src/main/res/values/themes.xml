@@ -3,6 +3,8 @@
     <style name="Base.Theme.M_2090_3" parent="Theme.Material3.DynamicColors.DayNight">
 
 
+
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
@@ -14,56 +16,12 @@
         <item name="shapeAppearanceMediumComponent">@style/MyShapeAppearanceMediumComponent</item>
     </style>
 
-
-    <style name="MyCardViewStyle" parent="Widget.MaterialComponents.CardView">
-
-
-        <item name="shapeAppearance">@style/MyShapeAppearanceMediumComponent</item>
-    </style>
-
-    <style name="MyBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
-        <item name="itemActiveIndicatorStyle">@style/MyActiveIndicatorStyle</item>
-    </style>
-
-    <style name="MyActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.None</item>
-        <item name="android:color">?colorPrimary</item>
-    </style>
-
-    <style name="MyTabLayoutStyle" parent="Widget.Material3.TabLayout">
-        <item name="tabIndicatorFullWidth">false</item>
-        <item name="tabIndicatorColor">?myColor2</item>
-    </style>
-
-    <style name="MyAppBarStyle" parent="Widget.Material3.BottomAppBar">
-        <item name="backgroundTint">?myColor2</item>
-        <item name="navigationIconTint">@color/white</item>
-    </style>
-
-    <style name="MyShapeAppearanceSmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <style name="MyShapeAppearanceMediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">30dp</item>
-    </style>
-
-
-    <style name="MyTextAppearanceBody2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/aladin</item>
-        <item name="android:fontFamily">@font/aladin</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:letterSpacing">0.1178571429</item>
-    </style>
-
     <style name="MyNewTheme" parent="Base.Theme.M_2090_3" />
 
     <style name="SplashTheme" parent="MyNewTheme" >
         <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
     </style>
 
     <style name="MyNewTheme.MyNewNewTheme" />
@@ -82,18 +40,6 @@
         <item name="myColor">#0D96FF</item>
     </style>
 
-    <style name="MyChipStyle" parent="Widget.Material3.Chip.Suggestion">
-        <item name="chipBackgroundColor">@drawable/my_selector_backgroundchip</item>
-        <item name="rippleColor">#CF00F4</item>
-        <item name="android:textAppearance">@style/MyTextAppearanceBody2</item>
-        <item name="shapeAppearance">@style/MyShapeAppearanceSmallComponent</item>
-<!--        <item name="shapeAppearanceOverlay">@style/MyTextAppearanceBody2</item>-->
-    </style>
-
-    <style name="MyTextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="helperTextTextColor">#CF00F4</item>
-        <item name="counterTextColor">@drawable/my_selector_backgroundchip</item>
-    </style>
 
 
 </resources>
